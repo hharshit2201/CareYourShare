@@ -15,7 +15,7 @@ function App() {
       <Router>
         <NavBar/>
         <Switch>
-          <Route path='/' exact component={Dashboard} />
+          <Route path='/' exact component={Dashboard}  />
           <Route path='/dividends' component={Dividends} />
           <Route path='/earnings' component={Earnings} />
           <Route path='/mutualfunds' component={MutualFunds} />

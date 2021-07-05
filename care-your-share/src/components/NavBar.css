@@ -26,6 +26,10 @@
     transition: 350ms;
 }
 
+.nav-menu-active { 
+    background-image: linear-gradient(to right, aqua , blue);
+}
+
 .nav-text {
     display: flex;
     justify-content: start;

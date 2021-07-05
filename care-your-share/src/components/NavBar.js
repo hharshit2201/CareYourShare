@@ -4,14 +4,13 @@ import * as FaIcons from 'react-icons/fa';
 import { MenuItems } from './MenuItems';
 import './NavBar.css';
 import { IconContext} from 'react-icons';
+import { useLocation } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 function NavBar() {
-    const [navbar, setNavbar]= useState(false);
+    const [navbar, setNavbar] = useState(false);
     const toggleNavbar = () => setNavbar(!navbar);
-
-    
-
-
+   
     return(
         <>
         <IconContext.Provider value={{color:'#FFFFFF'}}>
@@ -20,7 +19,7 @@ function NavBar() {
                     <FaIcons.FaBars onClick={toggleNavbar}/>
                 </Link>
             </div>
-            <nav className={navbar?'nav-menu active': 'nav-menu'}>
+            <nav className={navbar ? 'nav-menu active' : 'nav-menu'}>
                 <ul  className='nav-menu-items'>
                     <li className='navbar-toggle'>
                         <Link to='#' className='menu-bars'>
@@ -31,10 +30,11 @@ function NavBar() {
                         return (
                             <li key={index} className={item.cName}>
                                 {/* TODO: Highlight the selected menu in navbar*/}
-                                <Link to={item.path} >
+                                
+                                <NavLink exact to={item.path} activeClassName="nav-menu-active">
                                    {item.icon}
                                    <span>{item.title}</span>
-                                </Link>
+                                </NavLink>
                             </li>
                         )
                     })}
